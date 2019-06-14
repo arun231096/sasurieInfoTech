@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { AboutComponent } from './about/about.component';
 import { ClientComponent } from './client/client.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { SitDataService } from './sitData.Service';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SitDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

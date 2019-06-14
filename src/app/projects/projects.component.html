@@ -5,25 +5,23 @@
       <div class="container">
         <div class="section-header">
           <h2>Our Portfolio</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid" *ngIf="item">
         <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="portfolio-item wow fadeInUp">
-              <a href="../../assets/img/portfolio/1.jpg" class="portfolio-popup">
-                <img src="../../assets/img/portfolio/1.jpg" alt="">
-                <div class="portfolio-overlay">
-                  <div class="portfolio-info"><h2 class="wow fadeInUp">Portfolio Item 1</h2></div>
-                </div>
-              </a>
+          <div class="col-lg-3 col-md-4 project" *ngFor="let project of projects">
+            <div class="card">
+              <img class="card-img-top" src="{{project.image}}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">{{project.name}}</h4>
+                <h5 class="card-text" align="right">{{project.technology}}</h5>
+                <p align="justify">{{project.description}}</p>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4">
+          <!-- <div class="col-lg-3 col-md-4">
             <div class="portfolio-item wow fadeInUp">
               <a href="../../assets/img/portfolio/2.jpg" class="portfolio-popup">
                 <img src="../../assets/img/portfolio/2.jpg" alt="">
@@ -98,7 +96,7 @@
                 </div>
               </a>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SitDataService } from '../sitData.Service';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  projects = [];
+  item = false;
+  constructor(private projectService: SitDataService) { }
 
   ngOnInit() {
+    this.projectService.getProjectList().subscribe(      
+      (data : any[])=> {  
+        this.projects = data;
+        this.item = true;
+        console.log(data);
+      },
+      (error : any) => {
+        console.log(error);
+      }
+    );
   }
 
 }
